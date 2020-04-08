@@ -15,11 +15,11 @@ import dagger.Provides;
 import static com.example.notetaker.db.NoteDatabase.DATABASE_NAME;
 
 @Module
-public class AppModule {
+class AppModule {
 
     @Singleton
     @Provides
-    static NoteDatabase provideNoteDatabase(Application application){
+    static NoteDatabase provideNoteDatabase(Application application) {
         return Room.databaseBuilder(
                 application,
                 NoteDatabase.class,
@@ -29,8 +29,7 @@ public class AppModule {
 
     @Singleton
     @Provides
-    static NoteDao provideNoteDao(NoteDatabase noteDatabase){
+    static NoteDao provideNoteDao(NoteDatabase noteDatabase) {
         return noteDatabase.getNoteDao();
     }
-
 }

@@ -9,7 +9,7 @@ import com.example.notetaker.db.NoteDatabase;
 import org.junit.After;
 import org.junit.Before;
 
-public class NoteDatabaseTest {
+public abstract class NoteDatabaseTest {
 
     private NoteDatabase noteDatabase;
 
