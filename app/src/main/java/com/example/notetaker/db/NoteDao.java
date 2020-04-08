@@ -1,6 +1,7 @@
 package com.example.notetaker.db;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import io.reactivex.Single;
 
+@Dao
 public interface NoteDao {
 
     //using @Insert instructs Room to insert all parameters into the db in a single transaction
