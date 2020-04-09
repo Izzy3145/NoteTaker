@@ -6,6 +6,7 @@ import androidx.room.Room;
 
 import com.example.notetaker.db.NoteDao;
 import com.example.notetaker.db.NoteDatabase;
+import com.example.notetaker.repository.NoteRepository;
 
 import javax.inject.Singleton;
 
@@ -31,5 +32,11 @@ class AppModule {
     @Provides
     static NoteDao provideNoteDao(NoteDatabase noteDatabase) {
         return noteDatabase.getNoteDao();
+    }
+
+    @Singleton
+    @Provides
+    static NoteRepository provideNoteRepository(NoteDao noteDao){
+        return new NoteRepository(noteDao);
     }
 }
