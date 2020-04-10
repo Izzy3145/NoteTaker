@@ -1,4 +1,4 @@
-package com.example.notetaker;
+package com.example.notetaker.util;
 
 
 import com.example.notetaker.util.DateUtil;

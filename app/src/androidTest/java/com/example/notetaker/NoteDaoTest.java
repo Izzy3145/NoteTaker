@@ -24,6 +24,7 @@ public class NoteDaoTest extends NoteDatabaseTest {
     public static final String TEST_TIMESTAMP = "08-2018";
 
     //InstantTaskExecutorRule is used to swap background threads used by Architecture Components to a foreground thread
+    //used in JUnit4 only, not Junit5
     @Rule
     public InstantTaskExecutorRule rule = new InstantTaskExecutorRule();
 

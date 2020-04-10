@@ -41,7 +41,7 @@ public class NoteRepository {
 
     //we'll be turning this into LiveData
     //LiveData can only receive Flowables
-    public Flowable<Resource<Integer>> insertNote(final Note note) throws Exception{
+    public Flowable<Resource<Integer>> insertNote(final Note note) throws Exception {
 
         checkTitle(note);
 
@@ -68,6 +68,30 @@ public class NoteRepository {
                             return Resource.success(integer, INSERT_SUCCESS);
                         }
                         return Resource.error(null, INSERT_FAILURE);
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .toFlowable();
+    }
+
+    public Flowable<Resource<Integer>> updateNote(final Note note) throws Exception {
+        checkTitle(note);
+
+        return noteDao.updateNote(note)
+                .delay(timeDelay, timeUnit)
+                .onErrorReturn(new Function<Throwable, Integer>() {
+                    @Override
+                    public Integer apply(Throwable throwable) throws Exception {
+                        return -1;
+                    }
+                })
+                .map(new Function<Integer, Resource<Integer>>() {
+                    @Override
+                    public Resource<Integer> apply(Integer integer) throws Exception {
+                        if(integer > 0){
+                            return Resource.success(integer, UPDATE_SUCCESS);
+                        }
+                        return Resource.error(integer, UPDATE_FAILURE);
                     }
                 })
                 .subscribeOn(Schedulers.io())
