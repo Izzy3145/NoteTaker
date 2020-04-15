@@ -1,5 +1,6 @@
 package com.example.notetaker.di;
 
+import com.example.notetaker.NoteActivity;
 import com.example.notetaker.ui.NotesListActivity;
 
 import dagger.Module;
@@ -10,4 +11,7 @@ public abstract class ActivityBuildersModule {
 
     @ContributesAndroidInjector
     abstract NotesListActivity contributeNotesListActivity();
+
+    @ContributesAndroidInjector
+    abstract NoteActivity contributeNoteActivity();
 }
