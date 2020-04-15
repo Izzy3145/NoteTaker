@@ -1,4 +1,4 @@
-package com.example.notetaker.viewmodels;
+package com.example.notetaker.ui.note;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.LiveDataReactiveStreams;

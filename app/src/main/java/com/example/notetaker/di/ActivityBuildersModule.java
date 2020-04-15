@@ -1,7 +1,7 @@
 package com.example.notetaker.di;
 
-import com.example.notetaker.NoteActivity;
-import com.example.notetaker.ui.NotesListActivity;
+import com.example.notetaker.ui.note.NoteActivity;
+import com.example.notetaker.ui.noteslist.NotesListActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

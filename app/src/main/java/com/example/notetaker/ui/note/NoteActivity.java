@@ -1,4 +1,4 @@
-package com.example.notetaker;
+package com.example.notetaker.ui.note;
 
 import android.os.Bundle;
 
@@ -20,11 +20,11 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.notetaker.R;
 import com.example.notetaker.models.Note;
 import com.example.notetaker.ui.Resource;
 import com.example.notetaker.util.DateUtil;
 import com.example.notetaker.util.LinedEditText;
-import com.example.notetaker.viewmodels.NoteViewModel;
 import com.example.notetaker.viewmodels.ViewModelProviderFactory;
 import com.google.android.material.snackbar.Snackbar;
 

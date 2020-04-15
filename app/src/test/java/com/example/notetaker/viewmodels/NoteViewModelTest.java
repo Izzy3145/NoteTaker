@@ -3,6 +3,7 @@ package com.example.notetaker.viewmodels;
 import com.example.notetaker.models.Note;
 import com.example.notetaker.repository.NoteRepository;
 import com.example.notetaker.ui.Resource;
+import com.example.notetaker.ui.note.NoteViewModel;
 import com.example.notetaker.util.InstantExecutorExtension;
 import com.example.notetaker.util.LiveDataTestUtil;
 import com.example.notetaker.util.TestUtil;
@@ -19,7 +20,7 @@ import io.reactivex.internal.operators.single.SingleToFlowable;
 
 import static com.example.notetaker.repository.NoteRepository.INSERT_SUCCESS;
 import static com.example.notetaker.repository.NoteRepository.UPDATE_SUCCESS;
-import static com.example.notetaker.viewmodels.NoteViewModel.NO_CONTENT_ERROR;
+import static com.example.notetaker.ui.note.NoteViewModel.NO_CONTENT_ERROR;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;

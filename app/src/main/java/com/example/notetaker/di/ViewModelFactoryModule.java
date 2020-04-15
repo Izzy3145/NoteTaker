@@ -3,7 +3,9 @@ package com.example.notetaker.di;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.notetaker.viewmodels.NoteViewModel;
+import com.example.notetaker.ui.note.NoteViewModel;
+import com.example.notetaker.ui.noteslist.NotesListActivity;
+import com.example.notetaker.ui.noteslist.NotesListViewModel;
 import com.example.notetaker.viewmodels.ViewModelProviderFactory;
 
 import dagger.Binds;
@@ -20,5 +22,10 @@ public abstract class ViewModelFactoryModule {
     @IntoMap
     @ViewModelKey(NoteViewModel.class)
     public abstract ViewModel bindNoteViewModel(NoteViewModel noteViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(NotesListViewModel.class)
+    public abstract ViewModel bindNotesListViewModel(NotesListViewModel notesListViewModel);
 
 }
